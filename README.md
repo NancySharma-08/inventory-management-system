@@ -96,7 +96,7 @@ inventory-management-system/
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/NancySharma-08/inventory-management-system
 cd inventory-management-system
 ```
 
@@ -256,8 +256,6 @@ Request logging is implemented using:
 - Pagination and filtering
 - Bulk upload using CSV
 - Database transactions for order creation
-- Unit testing
-- Implement database transactions for atomic order processing
 
 ---
 
@@ -266,7 +264,7 @@ Request logging is implemented using:
 ```json
 {
   "email": "admin@test.com",
-  "password": "123456"
+  "password": "1234"
 }
 
 

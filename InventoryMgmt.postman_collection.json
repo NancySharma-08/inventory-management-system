@@ -1,0 +1,381 @@
+{
+  "info": {
+    "_postman_id": "1348a12f-939f-4835-88bf-27c963ab0cb8",
+    "name": "InventoryMgmt",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37679957"
+  },
+  "item": [
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "LowStockAlertReport",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reports/low-stock?threshold=20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reports",
+                "low-stock"
+              ],
+              "query": [
+                {
+                  "key": "threshold",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "InventorySummaryReport",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "OrderSummaryReport",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "SalesSummaryReport",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "AddProduct",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJVc2VydGVzdEB0ZXN0LmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc3NjE2MjMwMSwiZXhwIjoxNzc2MjQ4NzAxfQ.7QkE_jUE297N43qZlYW8hjfZA_UlxfNwTqn5fTPuYME\n",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "",
+                "type": "text"
+              },
+              {
+                "key": "",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Laptop\",\r\n  \"description\": \"Dell Inspiron 15\",\r\n  \"price\": 55000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetAllProducts",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "GetProductByID",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateProduct",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"iphone 16\",\r\n  \"price\": 58000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/products/15",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "products",
+                "15"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteProduct",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "stockIn",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer hgzcP5h920UQMD49E8u2uhtPMyUv4FmtwtyABeGn"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": 16,\n  \"quantity\": 50,\n  \"remarks\": \"Iphpne updated stock\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/inventory/stock-in",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "inventory",
+                "stock-in"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "stockOut",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"productId\": 17,\r\n  \"quantity\": 61,\r\n  \"remarks\": \"Sold iphone 16\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/inventory/stock-out",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "inventory",
+                "stock-out"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CurrentStockOfOneProductByID",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "InventoryTransForOneProduct",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "StockSummaryOfAllProducts",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "CreateOrders",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    {\r\n      \"productId\": 14,\r\n      \"quantity\": 2\r\n    },\r\n    {\r\n      \"productId\": 16,\r\n      \"quantity\": 1\r\n    },\r\n\r\n    {\r\n      \"productId\": 17,\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetAllOrders",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "GetOrderByID",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "UserRegister",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "LoginUser",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "testToken",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJVc2VydGVzdEB0ZXN0LmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc3NjE2MjMwMSwiZXhwIjoxNzc2MjQ4NzAxfQ.7QkE_jUE297N43qZlYW8hjfZA_UlxfNwTqn5fTPuYME",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
