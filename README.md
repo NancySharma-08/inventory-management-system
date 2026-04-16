@@ -96,7 +96,7 @@ inventory-management-system/
 ### 1. Clone the repository
 
 ```bash
-git clone [<your-repo-url>](https://github.com/NancySharma-08/inventory-management-system)
+git clone (https://github.com/NancySharma-08/inventory-management-system)
 cd inventory-management-system
 ```
 
